@@ -6,11 +6,11 @@
      - Creating kafka topic and its related definition for kafka topic (replicas and partitions)
      - Event Handler Implementation (i.e. implements `EventHandler` ) : Trigger onMessage() when ever any new message arrives
      - Producer to fetch data from URL ("https://stream.wikimedia.org/v2/stream/recentchange") and start the event handler
-     - Producer should has serializer (i.e. StringSerializer, JsonSerializer) in pom definition
+     - Producer should have serializer (i.e. StringSerializer, JsonSerializer) in pom definition
    - `kafka-consumer-wikimedia`
      - Read data from kafka broker using topic name and groupId
      - Saves the data into MySQL DB
-     - Consumer should has deserializer (i.e. StringDeserializer, JsonDeserializer) in pom definition
+     - Consumer should have deserializer (i.e. StringDeserializer, JsonDeserializer) in pom definition
 
 # Stack:
 1. Java 17
