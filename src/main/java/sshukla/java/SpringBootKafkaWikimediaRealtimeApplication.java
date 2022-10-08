@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class SpringbootKafkaWikimediaRealtimeApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(SpringbootKafkaWikimediaRealtimeApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(SpringbootKafkaWikimediaRealtimeApplication.class, args);
+    }
 
 }
