@@ -1,3 +1,4 @@
+/Users/seemant.techspire/Documents/projects/springboot-kafka-wikimedia-realtime/kafka-producer-wikimedia/src/main/java/shukla/java/handler/WikimediaChangesHandler.java
+/Users/seemant.techspire/Documents/projects/springboot-kafka-wikimedia-realtime/kafka-producer-wikimedia/src/main/java/shukla/java/service/WikimediaChangesProducer.java
+/Users/seemant.techspire/Documents/projects/springboot-kafka-wikimedia-realtime/kafka-producer-wikimedia/src/main/java/shukla/java/config/KafkaTopicConfiguration.java
 /Users/seemant.techspire/Documents/projects/springboot-kafka-wikimedia-realtime/kafka-producer-wikimedia/src/main/java/shukla/java/SpringBootProducerApplication.java
-/Users/seemant.techspire/Documents/projects/springboot-kafka-wikimedia-realtime/kafka-producer-wikimedia/src/main/java/shukla/java/config/WikimediaChangesProducer.java
-/Users/seemant.techspire/Documents/projects/springboot-kafka-wikimedia-realtime/kafka-producer-wikimedia/src/main/java/shukla/java/config/KakfaTopicConfiguration.java

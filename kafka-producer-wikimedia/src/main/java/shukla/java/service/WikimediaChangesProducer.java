@@ -6,7 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
-import shukla.java.config.WikimediaChangesHandler;
+import shukla.java.handler.WikimediaChangesHandler;
 
 import java.net.URI;
 import java.util.concurrent.TimeUnit;
@@ -21,15 +21,15 @@ public class WikimediaChangesProducer {
     private static final Logger LOGGER = LoggerFactory.getLogger(WikimediaChangesProducer.class);
 
     private final KafkaTemplate<String, String> kafkaTemplate;
-    private final String topicName;
 
-    public WikimediaChangesProducer(KafkaTemplate<String, String> kafkaTemplate, String topicName) {
+
+    public WikimediaChangesProducer(KafkaTemplate<String, String> kafkaTemplate) {
         this.kafkaTemplate = kafkaTemplate;
-        this.topicName = topicName;
     }
 
     public void sendMessage() throws InterruptedException {
         LOGGER.info("WikimediaChangesProducer.sendMessage()");
+        String topicName = "wikimedia_live_changes";
         EventHandler eventHandler = new WikimediaChangesHandler(kafkaTemplate, topicName);
         String url = "https://stream.wikimedia.org/v2/stream/recentchange";
         EventSource eventSource = new EventSource.Builder(eventHandler, URI.create(url)).build();

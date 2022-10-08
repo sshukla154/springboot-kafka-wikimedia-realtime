@@ -1,3 +1,4 @@
-shukla/java/config/WikimediaChangesProducer.class
+shukla/java/handler/WikimediaChangesHandler.class
 shukla/java/SpringBootProducerApplication.class
-shukla/java/config/KakfaTopicConfiguration.class
+shukla/java/config/KafkaTopicConfiguration.class
+shukla/java/service/WikimediaChangesProducer.class

@@ -12,8 +12,8 @@ import org.springframework.kafka.core.KafkaTemplate;
 public class WikimediaChangesHandler implements EventHandler {
 
     Logger LOGGER = LoggerFactory.getLogger(WikimediaChangesHandler.class);
-    private KafkaTemplate<String, String> kafkaTemplate;
-    private String topicName;
+    private final KafkaTemplate<String, String> kafkaTemplate;
+    private final String topicName;
 
     public WikimediaChangesHandler(KafkaTemplate kafkaTemplate, String topicName) {
         this.kafkaTemplate = kafkaTemplate;
