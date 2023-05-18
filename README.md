@@ -20,7 +20,7 @@
 5. Jackson
 6. Eventsource
 7. Kafka
-8. MySQL (Create database springboot_kafka)
+8. ~~MySQL (Create database springboot_kafka)~~ Postgres (Create database springboot_kafka)
 
 # EVENT-DRIVEN Architecture
 - EDA can asynchronously publish and subscribe to events via event/message broker.
