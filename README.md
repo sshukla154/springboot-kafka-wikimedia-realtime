@@ -26,3 +26,26 @@
 - EDA can asynchronously publish and subscribe to events via event/message broker.
 - EDA applications communicate with each other by sending and/or receiving  events/messages/
 
+## Docker Approach:
+1. Execute below command to start the docker compose
+```bash
+docker-compose up -d
+```
+
+2. Execute below command to stop the docker compose
+```bash
+docker-compose down
+```
+
+3. To check (follow) the logs of docker compose
+```bash
+docker-compose logs -f
+```
+
+4. To check the logs of individual container
+```bash
+docker logs -f <container-name>
+```
+
+
+
