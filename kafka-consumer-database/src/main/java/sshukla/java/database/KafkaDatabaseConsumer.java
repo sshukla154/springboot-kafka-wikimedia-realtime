@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
 import sshukla.java.entity.WikimediaData;
 import sshukla.java.repository.WikimediaRepository;
 
+import java.util.UUID;
+
 /**
  * @author 'Seemant Shukla' on '08/10/2022'
  */
@@ -14,20 +16,21 @@ import sshukla.java.repository.WikimediaRepository;
 @Service
 public class KafkaDatabaseConsumer {
 
-    Logger LOGGER = LoggerFactory.getLogger(KafkaDatabaseConsumer.class);
+	Logger LOGGER = LoggerFactory.getLogger(KafkaDatabaseConsumer.class);
 
-    private final WikimediaRepository wikimediaRepository;
+	private final WikimediaRepository wikimediaRepository;
 
-    public KafkaDatabaseConsumer(WikimediaRepository wikimediaRepository) {
-        this.wikimediaRepository = wikimediaRepository;
-    }
+	public KafkaDatabaseConsumer(WikimediaRepository wikimediaRepository) {
+		this.wikimediaRepository = wikimediaRepository;
+	}
 
-    @KafkaListener(topics = "wikimedia_live_changes", groupId = "wikimedia-group")
-    public void consumeMessage(String eventMessage) {
-        LOGGER.info("KafkaDatabaseConsumer.consumeMessage() :::: {}", eventMessage);
-        WikimediaData wikimediaData = new WikimediaData();
-        wikimediaData.setWikimediaEventData(eventMessage);
-        wikimediaRepository.save(wikimediaData);
-    }
+	@KafkaListener(topics = "wikimedia_live_changes", groupId = "wikimedia-group")
+	public void consumeMessage(String eventMessage) {
+		LOGGER.info("KafkaDatabaseConsumer.consumeMessage() :::: {}", eventMessage);
+		WikimediaData wikimediaData = new WikimediaData();
+		wikimediaData.setId(UUID.randomUUID().toString());
+		wikimediaData.setWikimediaEventData(eventMessage);
+		wikimediaRepository.save(wikimediaData);
+	}
 
 }

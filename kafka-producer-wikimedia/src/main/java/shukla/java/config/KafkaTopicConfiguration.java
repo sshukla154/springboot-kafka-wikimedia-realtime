@@ -14,7 +14,7 @@ public class KafkaTopicConfiguration {
 
     @Bean
     public NewTopic createMultiModuleKafkaTopic() {
-        return TopicBuilder.name("wikimedia_live_changes").replicas(1).partitions(1).build();
+        return TopicBuilder.name("wikimedia_live_changes").replicas(3).partitions(5).build();
     }
 
 }
