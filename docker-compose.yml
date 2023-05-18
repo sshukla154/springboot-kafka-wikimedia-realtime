@@ -33,7 +33,6 @@ services:
       dockerfile: Dockerfile
     environment:
       - MODE=producer
-    # Add any other configuration required for the Kafka producer container
     depends_on:
       - confluent-kafka-service
     networks:
@@ -45,9 +44,30 @@ services:
       dockerfile: Dockerfile
     environment:
       - MODE=consumer
+      - SPRING_DATASOURCE_HOST=postgres
+      - SPRING_DATASOURCE_PORT=5432
+      - SPRING_DATASOURCE_DB=springboot_kafka
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=postgres
     # Add any other configuration required for the Kafka consumer container
+    restart: on-failure
     depends_on:
       - confluent-kafka-service
+      - postgres
+    networks:
+      - kafka-network
+
+  postgres:
+    image: postgres:latest
+    hostname: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: springboot_kafka
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
     networks:
       - kafka-network
 
