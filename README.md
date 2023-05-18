@@ -9,7 +9,7 @@
      - Producer should have serializer (i.e. StringSerializer, JsonSerializer) in pom definition
    - `kafka-consumer-wikimedia`
      - Read data from kafka broker using topic name and groupId
-     - Saves the data into MySQL DB
+     - Saves the data into Postgres DB
      - Consumer should have deserializer (i.e. StringDeserializer, JsonDeserializer) in pom definition
 
 # Stack:
@@ -20,7 +20,7 @@
 5. Jackson
 6. Eventsource
 7. Kafka
-8. ~~MySQL (Create database springboot_kafka)~~ Postgres (Create database springboot_kafka)
+8. ~~MySQL (Create database springboot_kafka)~~ Postgres (Create database _springboot_kafka_ and schema _wikimedia_data_)
 
 # EVENT-DRIVEN Architecture
 - EDA can asynchronously publish and subscribe to events via event/message broker.
